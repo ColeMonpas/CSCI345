@@ -1,0 +1,18 @@
+Use Case to test
+
+1. Start game and initialize 3 players on their spots with colors and ranks
+2. input the possible moves for player 1 on the text box
+3. move the player onto a saloon blank area
+4. end players turn
+5. second player moves on to a rank 1 extra role
+6. third player moves onto a scene card role if possible
+7. player 1 moves to a role
+8. player 2 rolls dice on the extra role 
+8A. player 2 rolls correctly and shot counter is updated as well as player money
+8B. player 2 fails and updates their credits
+9. player 3 rolls as well
+9A. player 3 updates shot counter and gets money
+9b. player 3 loses and doesn't gain anything
+
+
+// anytime an action happens a text box is updated to represent the action taken

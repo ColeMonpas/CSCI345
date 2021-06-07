@@ -1,0 +1,11 @@
+# Milestone 2 Write-up
+
+(Write 2 paragraphs -- about 200-500 words -- describing the SOLID design principles and design patterns you utilize in your outline.)
+
+## SOLID Principles
+
+Some SOLID desgin principles we implemented were, the single responsibility principle, the open and closed principle. First off the single responsibility principle was implemented in the dice class and the button class, as well as the role and sceneCard classes. The dice classes only responsibility is to simply roll a dice and return a value, we decided to keep the dice class simple and outside of the model for extensibility and organization. As for the roll class, it's only usage is it just contains information relative to that specific role, and we made sure to keep it in that state by having the player placement indepent in the model. The button class woll be a custom button that implements jbutton, it's job is to keep track of its own varaibles. For open and close principles we implemented this principle into the dice, as well the model so for example we can change the number of days in a game, the number of players, and what scenes are connected, etc. The dice we decided to give it the low and high values which essentially lets us change the amount of sides on a die. Alternatively we can also change the budget of the sceneCard and maxShots which will pair nicely with the adjusted dice extensibility. 
+
+## Design Patterns
+
+The main design pattern we decided to implement was the model view controller pattern, as well as the model observer pattern. We implemented this by having the controller handle input which is then sent to the model for the calculations to take place, then the model communicates to the board view with the model observer pattern which will reduce coupling and allow for extensibiliy by removing potential direct connections between model and view. We decided to use this pattern because it would fit best for this game, as there is a massive amount of potential inputs from the user that the game must handle. Because of this it was best to use the MVC pattern to increase organization and reduce complexity between all of the classes. This also helped implement the single responsibility principle because the controller and the view both only handle inputs or outputs. 

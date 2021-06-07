@@ -1,0 +1,175 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><help_text>Scene
+--
+budget: int
+shotCounter: int
+--
+-endScene()</help_text><element><id>UMLClass</id><coordinates><x>390</x><y>830</y><w>170</w><h>120</h></coordinates><panel_attributes>Controller
+--
+--
++nextTurn()
++isValidAction()
++startGame()
++playerClickedButton()
++playerClicked()
++sendAction()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>370</x><y>60</y><w>150</w><h>170</h></coordinates><panel_attributes>Role
+--
+name: string
+taken: boolean
+rank: int
+type: string
+practiceChips: int
+xPos: int
+yPos: int
+text: String
+setName: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>580</x><y>60</y><w>150</w><h>110</h></coordinates><panel_attributes>SceneCard
+--
+budget: int
+roleList: ArrayList&lt;Role&gt;
+name: String
+text: String
+imgName: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>560</x><y>1150</y><w>220</w><h>270</h></coordinates><panel_attributes>BoardView
+--
+frame: JFrame
+playerCount: int 
+movePanel: Jpanel
+controlPanel: Jpanel
+endTurn: Jbutton
+cardList: ArrayList&lt;Component&gt;
+playerBoardList: ArrayList&lt;Component&gt;
+
+--
+-init()
+-createControlPanel()
+-showPlayerInfo()
+-getMovePanel()
+-miscInteraction()
++mouseClicked()
++actionPerformed()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>460</x><y>620</y><w>170</w><h>150</h></coordinates><panel_attributes>Player
+--
+playerID: int
+money: int
+credits: int 
+rank: int
+currentLocation: Baseset
+currentRole: Role
+practiceChips: int 
+score: int </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>710</x><y>990</y><w>30</w><h>180</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;160;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>320</x><y>1320</y><w>160</w><h>70</h></coordinates><panel_attributes>Deadwood
+--
+--
++Main()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>470</x><y>1350</y><w>110</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>90;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>860</x><y>1240</y><w>140</w><h>130</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+ModelObserver
+--
+--
+updateBoard()
+updatePlayer()
+updatePlayerCount()
+updateMovePanel()
+updateEndGame()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>770</x><y>1300</y><w>110</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>90;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>890</x><y>990</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>860</x><y>1040</y><w>210</w><h>160</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+Model
+--
+--
+registerObserver()
+removeObserver()
+notifyObserversAboutBoard()
+notifyObserversAboutPlayer()
+notifyObserversAboutMovePanel()
+notifyObserversAboutPlayerCount()
+notifyObserversAboutEndGame()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>930</x><y>1190</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>UMLClass</id><coordinates><x>690</x><y>620</y><w>230</w><h>380</h></coordinates><panel_attributes>DeadwoodModel
+--
+observerList: ArrayList&lt;ModelObserver&gt;
+currentPlayer: Player
+dice: Dice 
+playerOrder: Queue&lt;Player&gt;
+dayCounter: int
+maxDays: int 
+location: Location
+playerMovedThisTurn: boolean
+playerActionDoneThisTurn: boolean
+--
++startGame()
++isValidMove()
++movePlayer
++playerWork()
++playerRehearse()
++subtractTake()
++endScene()
++upgradeRank()
++rotatePlayers()
++newDay()
++lastDay()
++getPossibleActions()
++calculatePlayerScore()
++parseAction()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>840</x><y>570</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>620</x><y>680</y><w>90</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>70;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>640</x><y>490</y><w>120</w><h>90</h></coordinates><panel_attributes>Dice
+--
+heighVal: int
+lowVal: int
+--
+-roll()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>720</x><y>570</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>550</x><y>870</y><w>160</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>140;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>860</x><y>1390</y><w>110</w><h>40</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+mouseListener</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>770</x><y>1400</y><w>110</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>90;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>780</x><y>250</y><w>220</w><h>110</h></coordinates><panel_attributes>/BaseSet/
+--
+xPos: int
+yPos: int 
+neighbors: ArrayList&lt;String&gt;
+name: string
+blankAreasList: ArrayList&lt;BlankArea&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>580</x><y>250</y><w>150</w><h>120</h></coordinates><panel_attributes>SceneSet
+--
+sceneCard: SceneCard
+extras: ArrayList&lt;Role&gt;
+takes: ArrayList&lt;Take&gt;
+isFinished: boolean
+isActive: boolean
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>810</x><y>140</y><w>180</w><h>70</h></coordinates><panel_attributes>CastingOffice
+--
+creditList: ArrayList&lt;Upgrade&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1120</x><y>270</y><w>110</w><h>30</h></coordinates><panel_attributes>Trailer</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1120</x><y>320</y><w>110</w><h>90</h></coordinates><panel_attributes>BlankArea
+--
+xPos: int
+yPos: int
+playerID: int
+blankNumber: int</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>990</x><y>320</y><w>150</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>130;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>650</x><y>160</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>510</x><y>310</y><w>90</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;70;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>370</x><y>250</y><w>150</w><h>120</h></coordinates><panel_attributes>Take
+--
+xPos: int
+yPos: int
+takeNumber: int
+isFlipped: boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>510</x><y>200</y><w>140</w><h>70</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;120;50</additional_attributes></element><element><id>Relation</id><coordinates><x>510</x><y>100</y><w>90</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;70;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>810</x><y>0</y><w>180</w><h>100</h></coordinates><panel_attributes>Upgrade
+--
+xPos: int
+yPos: int
+amount: int
+rank: int 
+currency: string</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>890</x><y>90</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>UMLClass</id><coordinates><x>780</x><y>400</y><w>220</w><h>180</h></coordinates><panel_attributes>Location
+--
+setMap: Hashmap&lt;String, BaseSet&gt;
+allSceneCards: ArrayList&lt;SceneCard&gt;
+allSetsList: ArrayList&lt;BaseSet&gt;
+scenesFinished: int 
+--
++initTenScenes()
++getUpgrade()
++getSet()
++getRole()
++isDayDone()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>880</x><y>350</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>910</x><y>680</y><w>90</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>70;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>980</x><y>620</y><w>220</w><h>160</h></coordinates><panel_attributes>ParseXML
+--
+allSceneCards: ArrayList&lt;SceneCard&gt;
+setsList: ArrayList&lt;BaseSet&gt;
+--
+-getDocFromFile()
+-readBoardData()
+-parseOfficeOrTrailer()
++parseForTheScenes()
++parseForTheSets()
++initializeAllScenes()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>250</x><y>830</y><w>100</w><h>120</h></coordinates><panel_attributes>Action
+-subclass
+--
+xPos: int
+yPos: int
+name: String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>340</x><y>870</y><w>70</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;50;10</additional_attributes></element><element><id>Relation</id><coordinates><x>990</x><y>280</y><w>150</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;130;10</additional_attributes></element><element><id>Relation</id><coordinates><x>890</x><y>200</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>720</x><y>280</y><w>80</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>60;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>420</x><y>1070</y><w>100</w><h>30</h></coordinates><panel_attributes>USER</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>460</x><y>1100</y><w>100</w><h>110</h></coordinates><panel_attributes>lt=-
+Sees
+
+
+</panel_attributes><additional_attributes>10;10;80;90</additional_attributes></element><element><id>Relation</id><coordinates><x>460</x><y>940</y><w>30</w><h>150</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element></diagram>
